@@ -13,7 +13,8 @@ func _physics_process(delta: float):
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
 	velocity = dir * speed
 	move_and_slide()
-	make_path()
+	
 
 func make_path():
+	print("make_path")
 	nav_agent.target_position = direction

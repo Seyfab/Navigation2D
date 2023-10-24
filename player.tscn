@@ -17,4 +17,5 @@ texture = ExtResource("1_tyvqc")
 shape = SubResource("RectangleShape2D_dodti")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_postprocessing = 1
 debug_enabled = true

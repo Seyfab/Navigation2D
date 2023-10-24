@@ -8,3 +8,4 @@ func _unhandled_input(event):
 	if event.button_index != MOUSE_BUTTON_LEFT or not event.pressed:
 		return
 	player.direction = event.global_position
+	player.make_path()
