@@ -1,20 +1,19 @@
 extends CharacterBody2D
 
-const speed = 40
+const speed = 100
 
-var direction : Vector2
+var destination : Vector2
 
-@onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
+@onready var navigation_agent := $NavigationAgent2D as NavigationAgent2D
 
 func _ready():
-	direction = position
+	destination = position
 
 func _physics_process(delta: float):
-	var dir = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = dir * speed
+	var direction = to_local(navigation_agent.get_next_path_position()).normalized()
+	velocity = direction * speed
 	move_and_slide()
 	
 
-func make_path():
-	print("make_path")
-	nav_agent.target_position = direction
+func create_path():
+	navigation_agent.target_position = destination
